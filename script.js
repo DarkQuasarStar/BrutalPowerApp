@@ -9,11 +9,13 @@ document.querySelectorAll('.finish-btn').forEach(btn => {
     if (btn.textContent === 'Finish') {
       btn.textContent = 'Done';
       let countdown = 90;
-      restText.textContent = "Rest: 90s";
+      restText.textContent = "Rest: " + countdown + "s"; // Visa direkt
+      countdown--;
+
       timer = setInterval(() => {
-        countdown--;
         if (countdown > 0) {
           restText.textContent = "Rest: " + countdown + "s";
+          countdown--;
         } else {
           restText.textContent = "Rest: FIGHT!";
           clearInterval(timer);
